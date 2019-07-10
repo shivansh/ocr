@@ -53,7 +53,7 @@ for i in xrange(num_iter):
             grad_b2 += (alpha / batch_size) * l2_delta
 
             # --- [ Layer 1 ] -----------------------------------------------
-            l1_error = np.dot(w2.T, l2_delta)
+            l1_error = np.dot(w2.T, l2_error)  # chain rule
 
             # Backpropagation
             l1_delta = l1_error * sigmoid_prime(l1_output)
